@@ -12,6 +12,9 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     var locationManager = CLLocationManager()
     
+    @Published var restaurants = [Business]()
+    @Published var sights = [Business]()
+    
     
     override init() {
         super.init()
@@ -44,14 +47,12 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
         let userLocation = locations.first
         if userLocation != nil{
             //Have a location
-            
-            print(locations.first ?? "No location provided")
-            
+                        
             //Stop requestng location after get it once
             locationManager.stopUpdatingLocation()
             
-            getBusinesses(category: "arts", location: userLocation!)
-//            getBusinesses(category: "restaurants", location: userLocation!)
+            getBusinesses(category: Constants.sightsKey, location: userLocation!)
+            getBusinesses(category: Constants.restaurantsKey, location: userLocation!)
         }
         
         
@@ -64,12 +65,9 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     //MARK: Yelp API Methods
     
     func getBusinesses(category:String, location:CLLocation){
-        
-        let baseURL = "https://api.yelp.com/v3/businesses/search?"
-        
-        
-        
-        var urlComponents = URLComponents(string: baseURL)
+            
+
+        var urlComponents = URLComponents(string: Constants.apiUrl)
         urlComponents?.queryItems = [
             URLQueryItem(name: "latitude", value: String(location.coordinate.latitude)),
             URLQueryItem(name: "longitude", value: String(location.coordinate.longitude)),
@@ -80,7 +78,7 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
             
         
         var url = urlComponents?.url
-        
+                
         if let url = url{
             //Could create url Object
             
@@ -88,13 +86,31 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
             
             urlRequest.httpMethod = "GET"
             
-            urlRequest.addValue("Bearer ", forHTTPHeaderField: "Authorization")
+            
+            urlRequest.addValue("Bearer \(ApiKey.apiKey)", forHTTPHeaderField: "Authorization")
             
             let session = URLSession.shared
             
             let dataTask = session.dataTask(with: urlRequest) { data, response, error in
                 if error == nil{
-                    print(response)
+                    do{
+                        let jsonDecoder = JSONDecoder()
+                        let result = try jsonDecoder.decode(BusinessSearch.self, from: data!)
+                        
+                        DispatchQueue.main.async {
+                            
+                            switch category{
+                            case Constants.sightsKey:
+                                self.sights = result.businesses
+                            case Constants.restaurantsKey:
+                                self.restaurants = result.businesses
+                            default:
+                                break
+                            }
+                        }
+                    }catch{
+                        print("Error parsing json data",error)
+                    }
                 }else{
                     print("Error with getting data")
                 }

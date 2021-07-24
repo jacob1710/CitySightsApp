@@ -13,6 +13,9 @@
 		1658A81D26AC41A700484A90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1658A81C26AC41A700484A90 /* Preview Assets.xcassets */; };
 		1658A82826AC42F500484A90 /* ContentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658A82726AC42F500484A90 /* ContentModel.swift */; };
 		1658A82D26AC630900484A90 /* ApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658A82C26AC630900484A90 /* ApiKey.swift */; };
+		1658A82F26AC679000484A90 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658A82E26AC679000484A90 /* Business.swift */; };
+		1658A83126AC694B00484A90 /* BusinessSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658A83026AC694B00484A90 /* BusinessSearch.swift */; };
+		1658A83326AC6C4B00484A90 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658A83226AC6C4B00484A90 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		1658A81E26AC41A700484A90 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1658A82726AC42F500484A90 /* ContentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentModel.swift; sourceTree = "<group>"; };
 		1658A82C26AC630900484A90 /* ApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKey.swift; sourceTree = "<group>"; };
+		1658A82E26AC679000484A90 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		1658A83026AC694B00484A90 /* BusinessSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSearch.swift; sourceTree = "<group>"; };
+		1658A83226AC6C4B00484A90 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,8 @@
 		1658A82626AC420300484A90 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1658A82E26AC679000484A90 /* Business.swift */,
+				1658A83026AC694B00484A90 /* BusinessSearch.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				1658A82C26AC630900484A90 /* ApiKey.swift */,
+				1658A83226AC6C4B00484A90 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -179,7 +188,10 @@
 				1658A81826AC41A300484A90 /* LaunchView.swift in Sources */,
 				1658A81626AC41A300484A90 /* CitySightsApp.swift in Sources */,
 				1658A82D26AC630900484A90 /* ApiKey.swift in Sources */,
+				1658A82F26AC679000484A90 /* Business.swift in Sources */,
+				1658A83326AC6C4B00484A90 /* Constants.swift in Sources */,
 				1658A82826AC42F500484A90 /* ContentModel.swift in Sources */,
+				1658A83126AC694B00484A90 /* BusinessSearch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
