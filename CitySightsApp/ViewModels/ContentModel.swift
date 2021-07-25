@@ -37,9 +37,8 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
         
         authorizationState = locationManager.authorizationStatus
         
-        if locationManager.authorizationStatus == CLAuthorizationStatus.authorizedAlways || locationManager.authorizationStatus == CLAuthorizationStatus.authorizedWhenInUse{
+        if locationManager.authorizationStatus == .authorizedAlways || locationManager.authorizationStatus == .authorizedWhenInUse{
             
-            print("Location Authorized")
             locationManager.startUpdatingLocation()
 
             
@@ -56,9 +55,10 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
                         
             //Stop requestng location after get it once
             locationManager.stopUpdatingLocation()
-            
             getBusinesses(category: Constants.sightsKey, location: userLocation!)
             getBusinesses(category: Constants.restaurantsKey, location: userLocation!)
+            
+            
         }
         
         
@@ -77,13 +77,13 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
         urlComponents?.queryItems = [
             URLQueryItem(name: "latitude", value: String(location.coordinate.latitude)),
             URLQueryItem(name: "longitude", value: String(location.coordinate.longitude)),
-            URLQueryItem(name: "category", value: category),
+            URLQueryItem(name: "categories", value: category),
             URLQueryItem(name: "limit", value: "6"),
 
         ]
             
         
-        var url = urlComponents?.url
+        let url = urlComponents?.url
                 
         if let url = url{
             //Could create url Object

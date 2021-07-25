@@ -10,14 +10,14 @@ import Foundation
 struct Business: Decodable, Identifiable {
     
     var id: String?
-    var image_url: String?
     var alias: String?
     var name: String?
+    var image_url: String?
     var is_closed: Bool?
     var url: String?
-    var rating: Double?
     var review_count: Int?
     var categories: [Category]?
+    var rating: Double?
     var coordinates: Coordinate?
     var transactions: [String]?
     var price: String?
@@ -27,16 +27,6 @@ struct Business: Decodable, Identifiable {
     var distance: Double?
     
     
-}
-
-struct Category: Decodable {
-    var alias: String?
-    var title: String?
-}
-
-struct Coordinate: Decodable{
-    var latitude: Double?
-    var longitude: Double?
 }
 
 struct Location: Decodable{
@@ -50,3 +40,15 @@ struct Location: Decodable{
     var display_address: [String]?
     
 }
+
+struct Category: Decodable {
+    var alias: String?
+    var title: String?
+}
+
+struct Coordinate: Decodable{
+    var latitude: Double?
+    var longitude: Double?
+}
+
+

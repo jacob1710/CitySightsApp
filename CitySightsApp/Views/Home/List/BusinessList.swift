@@ -11,22 +11,11 @@ struct BusinessList: View {
     @EnvironmentObject var contentModel: ContentModel
     var body: some View {
         ScrollView{
-            LazyVStack(alignment: .leading){
-                ForEach(contentModel.restaurants) { business in
-                    Text(business.name ?? "Business")
-                    Divider()
-                }
-                ForEach(contentModel.sights) { business in
-                    Text(business.name ?? "Business")
-                    Divider()
-                }
+            LazyVStack(alignment: .leading, pinnedViews:[.sectionHeaders]){
+                BusinessSection(title: "Restaurants", businesses: contentModel.restaurants)
+                BusinessSection(title: "Sights", businesses: contentModel.sights)
             }
         }
     }
 }
 
-struct BusinessList_Previews: PreviewProvider {
-    static var previews: some View {
-        BusinessList()
-    }
-}
