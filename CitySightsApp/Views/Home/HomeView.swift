@@ -28,6 +28,7 @@ struct HomeView: View {
                     
                     
                 }
+                .padding([.horizontal,.top])
             }else{
                 //Show Map
             }
@@ -36,11 +37,5 @@ struct HomeView: View {
             ProgressView()
         }
         
-    }
-}
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView()
     }
 }
