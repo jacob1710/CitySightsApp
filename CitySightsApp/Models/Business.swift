@@ -74,7 +74,6 @@ class Business: Decodable, Identifiable, ObservableObject {
         
     }
     
-    
 }
 
 

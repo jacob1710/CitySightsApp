@@ -12,6 +12,7 @@
 		16440DE326ADC984003C5190 /* BusinessSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16440DE226ADC984003C5190 /* BusinessSectionHeader.swift */; };
 		16440DE526ADCA41003C5190 /* BusinessSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16440DE426ADCA41003C5190 /* BusinessSection.swift */; };
 		16578A5B26B0458100D5AF9C /* BusinessRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16578A5A26B0458100D5AF9C /* BusinessRow.swift */; };
+		16578A5E26B057B600D5AF9C /* BusinessDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16578A5D26B057B600D5AF9C /* BusinessDetail.swift */; };
 		1658A81626AC41A300484A90 /* CitySightsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658A81526AC41A300484A90 /* CitySightsApp.swift */; };
 		1658A81826AC41A300484A90 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658A81726AC41A300484A90 /* LaunchView.swift */; };
 		1658A81A26AC41A700484A90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1658A81926AC41A700484A90 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		16440DE226ADC984003C5190 /* BusinessSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSectionHeader.swift; sourceTree = "<group>"; };
 		16440DE426ADCA41003C5190 /* BusinessSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSection.swift; sourceTree = "<group>"; };
 		16578A5A26B0458100D5AF9C /* BusinessRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessRow.swift; sourceTree = "<group>"; };
+		16578A5D26B057B600D5AF9C /* BusinessDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDetail.swift; sourceTree = "<group>"; };
 		1658A81226AC41A300484A90 /* CitySightsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CitySightsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1658A81526AC41A300484A90 /* CitySightsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySightsApp.swift; sourceTree = "<group>"; };
 		1658A81726AC41A300484A90 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
@@ -83,8 +85,17 @@
 				16440DE226ADC984003C5190 /* BusinessSectionHeader.swift */,
 				16440DE426ADCA41003C5190 /* BusinessSection.swift */,
 				16578A5A26B0458100D5AF9C /* BusinessRow.swift */,
+				16578A5C26B057A100D5AF9C /* Detail */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		16578A5C26B057A100D5AF9C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				16578A5D26B057B600D5AF9C /* BusinessDetail.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		1658A80926AC41A300484A90 = {
@@ -232,6 +243,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16578A5E26B057B600D5AF9C /* BusinessDetail.swift in Sources */,
 				16440DE526ADCA41003C5190 /* BusinessSection.swift in Sources */,
 				1658A81826AC41A300484A90 /* LaunchView.swift in Sources */,
 				1658A81626AC41A300484A90 /* CitySightsApp.swift in Sources */,
