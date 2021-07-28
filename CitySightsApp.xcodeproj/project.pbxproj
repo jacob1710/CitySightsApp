@@ -22,6 +22,7 @@
 		1658A82F26AC679000484A90 /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658A82E26AC679000484A90 /* Business.swift */; };
 		1658A83126AC694B00484A90 /* BusinessSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658A83026AC694B00484A90 /* BusinessSearch.swift */; };
 		1658A83326AC6C4B00484A90 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1658A83226AC6C4B00484A90 /* Constants.swift */; };
+		166446F426B17444008E8A66 /* BusinessMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166446F326B17444008E8A66 /* BusinessMap.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		1658A82E26AC679000484A90 /* Business.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		1658A83026AC694B00484A90 /* BusinessSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessSearch.swift; sourceTree = "<group>"; };
 		1658A83226AC6C4B00484A90 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		166446F326B17444008E8A66 /* BusinessMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessMap.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				16440DDD26ADC448003C5190 /* HomeView.swift */,
+				166446F226B17427008E8A66 /* Map */,
 				16440DDF26ADC716003C5190 /* List */,
 			);
 			path = Home;
@@ -174,6 +177,14 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		166446F226B17427008E8A66 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				166446F326B17444008E8A66 /* BusinessMap.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -245,6 +256,7 @@
 			files = (
 				16578A5E26B057B600D5AF9C /* BusinessDetail.swift in Sources */,
 				16440DE526ADCA41003C5190 /* BusinessSection.swift in Sources */,
+				166446F426B17444008E8A66 /* BusinessMap.swift in Sources */,
 				1658A81826AC41A300484A90 /* LaunchView.swift in Sources */,
 				1658A81626AC41A300484A90 /* CitySightsApp.swift in Sources */,
 				16440DE326ADC984003C5190 /* BusinessSectionHeader.swift in Sources */,

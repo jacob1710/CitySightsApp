@@ -22,7 +22,9 @@ struct HomeView: View {
                             Image(systemName: "location.circle.fill")
                             Text("San Francisco")
                             Spacer()
-                            Text("Switch to map View")
+                            Button("Switch to map View"){
+                                self.isMapShowing = true
+                            }
                                 .foregroundColor(.blue)
                         }
                         Divider()
@@ -35,6 +37,8 @@ struct HomeView: View {
                     
                 }else{
                     //Show Map
+                    BusinessMap()
+                        .ignoresSafeArea()
                 }
             }
            
