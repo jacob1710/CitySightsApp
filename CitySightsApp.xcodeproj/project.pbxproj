@@ -77,6 +77,7 @@
 				16440DDD26ADC448003C5190 /* HomeView.swift */,
 				166446F226B17427008E8A66 /* Map */,
 				16440DDF26ADC716003C5190 /* List */,
+				16578A5C26B057A100D5AF9C /* Detail */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -88,7 +89,6 @@
 				16440DE226ADC984003C5190 /* BusinessSectionHeader.swift */,
 				16440DE426ADCA41003C5190 /* BusinessSection.swift */,
 				16578A5A26B0458100D5AF9C /* BusinessRow.swift */,
-				16578A5C26B057A100D5AF9C /* Detail */,
 			);
 			path = List;
 			sourceTree = "<group>";

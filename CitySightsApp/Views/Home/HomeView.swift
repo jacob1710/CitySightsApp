@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @EnvironmentObject var contentModel: ContentModel
     @State var isMapShowing = false
+    @State var selectedBusiness:Business?
     var body: some View {
         if contentModel.restaurants.count != 0 || contentModel.sights.count != 0{
             
@@ -37,8 +38,11 @@ struct HomeView: View {
                     
                 }else{
                     //Show Map
-                    BusinessMap()
+                    BusinessMap(selectedBusiness: $selectedBusiness)
                         .ignoresSafeArea()
+                        .sheet(item: $selectedBusiness) { business in
+                            BusinessDetail(business: business)
+                        }
                 }
             }
            
