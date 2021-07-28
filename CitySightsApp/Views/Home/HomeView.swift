@@ -23,7 +23,7 @@ struct HomeView: View {
                             Image(systemName: "location.circle.fill")
                             Text("San Francisco")
                             Spacer()
-                            Button("Switch to map View"){
+                            Button("Switch to Map View"){
                                 self.isMapShowing = true
                             }
                                 .foregroundColor(.blue)
@@ -38,11 +38,30 @@ struct HomeView: View {
                     
                 }else{
                     //Show Map
-                    BusinessMap(selectedBusiness: $selectedBusiness)
-                        .ignoresSafeArea()
-                        .sheet(item: $selectedBusiness) { business in
-                            BusinessDetail(business: business)
+                    ZStack(alignment: .top){
+                        BusinessMap(selectedBusiness: $selectedBusiness)
+                            .ignoresSafeArea()
+                            .sheet(item: $selectedBusiness) { business in
+                                BusinessDetail(business: business)
                         }
+                        ZStack{
+                            Rectangle()
+                                .foregroundColor(.white)
+                                .cornerRadius(5)
+                                .frame(height: 48)
+                            HStack{
+                                Image(systemName: "location.circle.fill")
+                                Text("San Francisco")
+                                Spacer()
+                                Button("Switch to List View"){
+                                    self.isMapShowing = false
+                                }
+                                    .foregroundColor(.blue)
+                            }
+                            .padding()
+                        }
+                        .padding()
+                    }
                 }
             }
            
