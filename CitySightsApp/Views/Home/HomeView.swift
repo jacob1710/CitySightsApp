@@ -29,7 +29,15 @@ struct HomeView: View {
                                 .foregroundColor(.blue)
                         }
                         Divider()
-                        BusinessList()
+                        ZStack(alignment: .top){
+                            BusinessList()
+                            HStack{
+                                Spacer()
+                                YelpAttribution(link: "https://yelp.co.uk")
+                            }
+                            .padding(.trailing, -20)
+                        }
+                       
                         
                         
                     }

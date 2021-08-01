@@ -16,7 +16,8 @@ struct BusinessTitle: View {
        
         //Name
         Text(business.name!)
-            .font(.largeTitle)
+            .font(.title2)
+            .bold()
             
         
         
