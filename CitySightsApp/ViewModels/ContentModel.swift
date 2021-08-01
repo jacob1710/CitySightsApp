@@ -23,7 +23,7 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
         
         locationManager.delegate = self
         
-        locationManager.requestWhenInUseAuthorization()
+       
         
         
 //        locationManager.startUpdatingLocation()
@@ -31,6 +31,9 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
         
     }
     
+    func requestGeolocationPermission(){
+        locationManager.requestWhenInUseAuthorization()
+    }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         
