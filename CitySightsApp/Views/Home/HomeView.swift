@@ -21,7 +21,8 @@ struct HomeView: View {
                     VStack(alignment: .leading){
                         HStack{
                             Image(systemName: "location.circle.fill")
-                            Text("San Francisco")
+                            Text(contentModel.placemark?.locality ?? "")
+                                .multilineTextAlignment(.center)
                             Spacer()
                             Button("Switch to Map View"){
                                 self.isMapShowing = true
@@ -59,7 +60,7 @@ struct HomeView: View {
                                 .frame(height: 48)
                             HStack{
                                 Image(systemName: "location.circle.fill")
-                                Text("San Francisco")
+                                Text(contentModel.placemark?.locality ?? "")
                                 Spacer()
                                 Button("Switch to List View"){
                                     self.isMapShowing = false

@@ -16,6 +16,7 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
     @Published var authorizationState = CLAuthorizationStatus.notDetermined
     @Published var restaurants = [Business]()
     @Published var sights = [Business]()
+    @Published var placemark: CLPlacemark?
     
     
     override init() {
@@ -55,9 +56,18 @@ class ContentModel: NSObject, CLLocationManagerDelegate, ObservableObject {
         let userLocation = locations.first
         if userLocation != nil{
             //Have a location
+        
                         
             //Stop requestng location after get it once
             locationManager.stopUpdatingLocation()
+            
+            let geocoder = CLGeocoder()
+            geocoder.reverseGeocodeLocation(userLocation!) { placemarks, error in
+                if error == nil && placemarks != nil{
+                    self.placemark = placemarks?.first
+                }
+            }
+            
             getBusinesses(category: Constants.sightsKey, location: userLocation!)
             getBusinesses(category: Constants.restaurantsKey, location: userLocation!)
             
